@@ -1,123 +1,129 @@
 @import url(https://fonts.googleapis.com/css?family=Bitter:400,400italic,700);
 
 body {
-    font-size: 16px;
-    font-family: 'Open Sans', 'Arial', sans-serif;
-    background-color: #0F2C6E;
-    color: white;
+  font-size: 16px;
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  background-color: #fcfcfc;
+  color: black;
 }
 
 header {
-    width: 1200px;
-    margin: 0 auto;
-    border-bottom: solid 3px white;
+  width: 1200px;
+  margin: 0 auto;
+  border-bottom: solid 3px white;
 }
 
 footer {
-    background-color: dimgrey;
-    height: 100px;
-    margin-top: 50px;
+  background-color: dimgrey;
+  height: 100px;
+  margin-top: 50px;
 }
 
 #logo {
-    text-align: center;
+  text-align: center;
 }
 
 .navbar {
-    text-align: center;
-    /* align-items: center; */
-    padding-top: 10px;
+  text-align: center;
+  /* align-items: center; */
+  padding-top: 10px;
 }
 
 #hero-img {
-    width: 800px;
-    margin: 50px auto;
-    filter: drop-shadow(0 0 2rem white);
-    border-radius: 25px;
+  width: 800px;
+  margin: 50px auto;
+  filter: drop-shadow(0 0 2rem white);
+  border-radius: 25px;
 }
 
 hr {
-    width: 1200px;
+  width: 1200px;
 }
 
 nav.navbar > span {
-    padding: 20px;
+  padding: 20px;
 }
 
-h1, h2, h3, h4, h5 {
-    font-family: 'Bitter', serif;
-    font-weight: bold;
-    color: white;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Bitter', serif;
+  font-weight: bold;
+  color: #d9230f;
 }
 
 h1 {
-    font-size: 48px;
-    padding-bottom: 10px;
+  font-size: 48px;
+  padding-bottom: 10px;
 }
 
-h1 a, h1 a:hover {
-    color: white;
-    text-decoration: none;
+h1 a,
+h1 a:hover {
+  color: white;
+  text-decoration: none;
 }
 
 p.lead {
-    color: white;
+  color: #d9230f;
 }
 
-.table > thead > tr > th { 
-    white-space: nowrap;
+.table > thead > tr > th {
+  white-space: nowrap;
 }
 
 .about {
-    font-size: 90%;
+  font-size: 90%;
 }
 
 /* center the nav pills */
 .centered-pills {
-    text-align: center
+  text-align: center;
 }
 .centered-pills ul.nav-pills {
-    display: inline-block
+  display: inline-block;
 }
 .centered-pills li {
-    display: inline
+  display: inline;
 }
 .centered-pills a {
-    float: left
+  float: left;
 }
-* html .centered-pills ul.nav-pills, *+html .centered-pills ul.nav-pills {
-    display: inline
+* html .centered-pills ul.nav-pills,
+* + html .centered-pills ul.nav-pills {
+  display: inline;
 }
 
 .headshot {
-    max-width: 50px;
+  max-width: 50px;
 }
 
 .nowrap {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .label-dem {
-    color: #0294C7;
+  color: #0294c7;
 }
 
 .label-rep {
-    color: #D1220E;
+  color: #d1220e;
 }
 
 .label-ind {
-    color: #418B07;
+  color: #418b07;
 }
 
 #contactModal {
-    font-size: 0.9em;
+  font-size: 0.9em;
 }
 
 .filter_level label {
-    padding-left: 7px;
-    padding-right: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 
 #results-nav span {
-    padding-right: 20px;
+  padding-right: 20px;
 }

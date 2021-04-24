@@ -109,7 +109,7 @@ function addressSearch() {
             $.each(divisions, function(division_id, division){
                 if (DEBUG) console.log(division.name);
                 if (typeof division.officeIndices !== 'undefined'){
-                    
+
                     $.each(division.officeIndices, function(i, office){
                         var office_name = offices[office];
 
@@ -177,7 +177,7 @@ function addressSearch() {
             });
 
             var template = new EJS({'text': $('#tableGuts').html()});
-            
+
             if (show_federal) {
                 $('#federal-container').show();
                 $('#fed-nav').show();
@@ -196,7 +196,7 @@ function addressSearch() {
             } else {
                 $('#state-container').hide()
                 $('#state-nav').hide();
-            }                
+            }
 
             if (show_county) {
                 if (county_people.length == 0) {
@@ -215,9 +215,9 @@ function addressSearch() {
             } else {
                 $('#county-container').hide()
                 $('#county-nav').hide();
-            }  
+            }
 
-            if (show_local) {    
+            if (show_local) {
                 if (local_people.length == 0) {
                     $('#local-container').hide();
                     if (selected_local == '')
@@ -229,7 +229,7 @@ function addressSearch() {
                     $('#local-container').show();
                     $('#local-container-not-found').hide();
                 }
-                $('#local-results tbody').append(template.render({people: local_people}));   
+                $('#local-results tbody').append(template.render({people: local_people}));
             } else {
                 $('#local-container').hide()
                 $('#local-nav').hide();
@@ -240,13 +240,29 @@ function addressSearch() {
 
             // hook up modal stuff
             var modal_template = new EJS({'text': $('#modalGuts').html()});
+            // let cellData = document.getElementById('local-results');
+
+
+
             $('.btn-contact').off('click');
             $('.btn-contact').on('click', function(){
-                var info = all_people[$(this).data('id')];
-                $('#contactModalLabel').html("Contact " + info.person.name);
-                $('#modalContent').html(modal_template.render({info: info}));
-                $('#contactModal').modal('show');
-            })
+
+                // var info = all_people[$(this).data('id')];
+                // $('#contactModalLabel').html("Contact " + info.person.name);
+                // $('#modalContent').html(modal_template.render({info: info}));
+                // $('#contactModal').modal('show');
+                // formFieldName.innerHTML = cellData.rows[1].cells[1].innerHTML;
+
+                // adam's fill form field code
+                let cellDataName = document.querySelector('table').rows[1].cells[1];
+                let cellDataAddress = document.querySelector('table').rows[1].cells[3];
+                let formFieldName = document.getElementById('Widget1064702645');
+                let formFieldAddress = document.getElementById('Widget809887693');
+
+                formFieldName.value = cellDataName.innerHTML.trim().substring(0, 10);
+                formFieldAddress.value = cellDataAddress.innerHTML.trim().substring(28, 51).concat(' ', cellDataAddress.innerHTML.trim().substring(130, 151));
+
+                })
         }
     });
 }
@@ -286,7 +302,7 @@ function findMe() {
 };
 
 function setFoundDivisions(divisions){
-    
+
     // reset the labels
     $("#state-nav").hide();
     $("#county-nav").hide();
@@ -313,12 +329,12 @@ function setFoundDivisions(divisions){
 }
 
 function checkFederal(division_id, office_name) {
-    if( division_id == federal_pattern || 
+    if( division_id == federal_pattern ||
         cd_pattern.test(division_id) ||
         federal_offices.indexOf(office_name.name) >= 0)
         return true;
     else
-        return false; 
+        return false;
 }
 
 function checkState(division_id){
@@ -326,14 +342,14 @@ function checkState(division_id){
         sl_pattern.test(division_id))
         return true;
     else
-        return false; 
+        return false;
 }
 
 function checkCounty(division_id){
     if( county_pattern.test(division_id))
         return true;
     else
-        return false; 
+        return false;
 }
 
 function formatParty(party) {
