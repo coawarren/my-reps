@@ -12,53 +12,52 @@
 
   <head>
     <title>
-      
       My Reps
     </title>
     <meta charset='utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
       <meta content="Enter your address to find and contact your federal, state, county and local elected representatives" name='description' />
-    
+
     <meta content="My Reps" name='author' />
 
     <!-- Facebook metadata -->
     <meta content="My Reps" property="og:site_name">
-    
+
       <meta content="My Reps" property="og:title">
-    
-    
+
+
       <meta content="website" property="og:type">
-    
-    
+
+
       <meta content="Enter your address to find and contact your federal, state, county and local elected representatives" property="og:description">
-    
-    
+
+
       <meta content="http://localhost:5000/" property="og:url">
-    
-    
-    
+
+
+
       <meta content="http://localhost:5000/images/usa.png" property="og:image">
-    
-    
-    
+
+
+
 
     <!-- Twitter metadata -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="">
     <meta name="twitter:creator" content="">
-    
+
       <meta name="twitter:title" content="">
-    
-    
+
+
       <meta name="twitter:url" content="http://localhost:5000/">
-    
-    
+
+
       <meta name="twitter:description" content="Enter your address to find and contact your federal, state, county and local elected representatives">
-    
-    
+
+
       <meta name="twitter:image:src" content="http://localhost:5000/images/usa.png">
-    
+
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
@@ -82,41 +81,40 @@
 
 <!-- Warren push table data to Google form Script-->
 <script>
-    
-    var table = document.getElementById('local-results');
-    
-    for(var i = 1; i < table.rows.length; i++)
-    {
-        table.rows[i].onclick = function()
-        {
-             //rIndex = this.rowIndex;
-             document.getElementById("Widget1064702645").value =  '111';
-             document.getElementById("Widget809887693").value = this.cells[1].innerHTML;
-           
-        };
-    }
 
-</script>  
+    // let table = document.getElementById('local-results');
+
+    // for(let i = 1; i < table.rows.length; i++)
+    // {
+    //     table.rows[i].onclick = function()
+    //     {
+    //          //rIndex = this.rowIndex;
+    //          document.getElementById("Widget1064702645").innerHTML = '111';
+    //          document.getElementById("Widget809887693").value = this.cells[1].innerHTML;
+    //     };
+    // }
+
+</script>
 
 <!-- Warren push table data to Google form Script-->
 
-      
+
     </head>
     <body>
     <div class='main-content'>
       <div class="container-fluid">
 
-        <ul class="nav nav-pills pull-right">
+        <!-- <ul class="nav nav-pills pull-right">
           <li role="presentation"><a href="index.html"><i class='fa fa-home'></i> Home</a></li>
-      
-        </ul>
 
-          
+        </ul> -->
+
+
         <br />
         <br />
 
         <div class='text-center'>
-            <h1><a href='index.html'>My Reps</a></h1>
+            <h1>Paper Voice</h1>
             <!-- Update this tagline! -->
             <p class='lead'>Enter your address to <strong>find and contact</strong> your federal, state, county and local elected representatives</p>
         </div>
@@ -180,7 +178,7 @@
                   <span id='fed-nav'>
                     <a id="federal-name-nav" href="#federal-name">Federal</a></li>
                   </span>
-                  
+
                 </ul>
             </p>
 
@@ -200,7 +198,7 @@
                             <th class='hidden-xs'><i class='fa fa-map-marker'></i> Address</th>
                             <th><i class='fa fa-external-link'></i> Links</th>
                             <th></th>
-                            
+
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -223,7 +221,7 @@
                             <th class='hidden-xs'><i class='fa fa-map-marker'></i> Address</th>
                             <th><i class='fa fa-external-link'></i> Links</th>
                             <th></th>
-                            
+
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -286,12 +284,12 @@
             <p>This is a tool for looking up who your <a href='https://en.wikipedia.org/wiki/Representative_democracy' target='_blank'>elected representatives</a> are across the United States. Based on your address, we can find all the federal, state, county and local officials who represent you in government.</p>
 
             <p>Knowing who these representatives are and contacting their offices directly is the most effective way to change how our government works.</p>
-            
-            <p>The Paper Voice makes engaging with elected representatives easy by empowering you to digitally create a physical postcard.  
+
+            <p>The Paper Voice makes engaging with elected representatives easy by empowering you to digitally create a physical postcard.
 
             <p>Have an issue you care about? <strong>Find your rep and send them a postcard!</strong></p>
 
-            
+
         </div>
     </div>
     <div class='col-md-3 hidden-xs hidden-sm'>
@@ -390,7 +388,7 @@
 </script>
 
 <script id="modalGuts" type="text/EJS">
-    
+
     <div class='row'>
         <div class='col-xs-4'>
             <% if (info.person.photoUrl) { %>
@@ -452,7 +450,7 @@
       var results_level = $.address.parameter('results_level');
       if (results_level == undefined)
         results_level = ['local', 'county', 'state', 'federal'];
-      
+
       // set levels of government checkboxes
       if (results_level.indexOf("local") >= 0)
         $('#show_local_results').prop('checked', true);
@@ -470,12 +468,12 @@
             scrollTop: scroll_to.offset().top
         }, 1000);
       });
-      
+
       $('#find-me').click(function(){
-        findMe(); 
+        findMe();
         return false;
       });
-      
+
       $(":text").keydown(function(e){
           var key =  e.keyCode ? e.keyCode : e.which;
           if(key === 13) {
@@ -488,7 +486,7 @@
         if (DEBUG) console.log("search on load")
         addressSearch();
       }
-      
+
       $('#address-search').click(function(){
         addressSearch();
       });
@@ -509,11 +507,22 @@
 
       // redirecting traffic from The Healthy American, an anti-mask advocacy group, to the CDC page on wearing masks
       if (document.referrer.indexOf("thehealthyamerican.org") !== -1) {
-         location.href = "https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/cloth-face-cover-guidance.html"; 
+         location.href = "https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/cloth-face-cover-guidance.html";
       }
     </script>
 
+    <!-- <script defer>
 
+        let cellData = document.getElementById('local-results');
+        let formFieldName = document.getElementById('Widget1064702645');
+
+        function formFieldFill() {
+            formFieldName.innerHTML = cellData.rows[1].cells[1].innerHTML;
+        }
+
+        cellData.rows[1].cells[1].addEventListener('click', formFieldFill);
+
+    </script> -->
 
 
   </body>
