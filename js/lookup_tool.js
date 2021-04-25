@@ -259,8 +259,9 @@ function addressSearch() {
                 let formFieldName = document.getElementById('Widget1064702645');
                 let formFieldAddress = document.getElementById('Widget809887693');
 
-                formFieldName.value = cellDataName.innerHTML.trim().substring(0, 10);
-                formFieldAddress.value = cellDataAddress.innerHTML.trim().substring(28, 51).concat(' ', cellDataAddress.innerHTML.trim().substring(130, 151));
+                //julian's changes 
+                formFieldName.value = cellDataName.innerHTML.replace(/<[^>]*>?/gm, '').trim().replace(/\s+/g, ' ');
+                formFieldAddress.value = cellDataAddress.innerHTML.replace(/<[^>]*>?/gm, '').trim().replace(/\s+/g, ' ');
 
                 })
         }
